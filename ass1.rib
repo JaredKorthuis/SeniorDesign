@@ -1,0 +1,19 @@
+##RenderMan RIB
+version 3.03
+Declare "Diam" "uniform float"
+Display "dots.tiff" "file" "rgb"
+Format 512 512 -1
+ShadingRate 1
+LightSource "ambientlight" 1 "intensity“ [0.25]
+LightSource "distantlight" 2 "intensity" [0.75] "from“ [5 8 -10] "to“ [0 0 0]
+Projection "perspective" "fov“ [70]
+WorldBegin
+Translate 0 0 6
+Surface "ovals“ "A“ 0.25 "B" .10
+Color [0 1 0]
+Opacity [0 1 1]
+TransformBegin
+Rotate 90 1. 0. 0.
+Sphere 3 -3 3 360
+TransformEnd
+WorldEnd
